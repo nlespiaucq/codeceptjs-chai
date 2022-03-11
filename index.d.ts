@@ -238,4 +238,31 @@ declare class chaiWrapper {
      * @returns
      */
     assertDeepIncludeMembers(actualValue: any, expectedValue: any, customErrorMsg?: any): any;
+    /**
+     * Asserts that the target is an instance of the given constructor
+     * https://www.chaijs.com/api/bdd/#method_instanceof
+     * @param {*} actualValue
+     * @param {*} expectedValue
+     * @param {*} customErrorMsg
+     * @returns
+     */
+    assertInstanceOf(actualValue: any, expectedValue: any, customErrorMsg?: any): any;
+    /**
+       * Asserts that the target is a member of the given array list
+       * https://www.chaijs.com/api/bdd/#method_oneof
+       * @param {*} actualValue
+       * @param {*} expectedValue
+       * @param {*} customErrorMsg
+       * @returns
+       */
+    assertBeOneOf(actualValue: any, expectedValue: any, customErrorMsg?: any): any;
+    /**
+       * Asserts that the array list has a member from the given array list
+       * https://www.chaijs.com/api/bdd/#method_oneof
+       * @param {*} actualValue
+       * @param {*} expectedValue
+       * @param {*} customErrorMsg
+       * @returns
+       */
+    assertContainOneOf(actualValue: any, expectedValue: any, customErrorMsg?: any): any;
 }

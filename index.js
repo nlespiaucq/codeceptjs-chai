@@ -399,6 +399,54 @@ class chaiWrapper extends Helper{
 
   }
 
+  /**
+   * Asserts that the target is an instance of the given constructor
+   * https://www.chaijs.com/api/bdd/#method_instanceof
+   * @param {*} actualValue
+   * @param {*} expectedValue
+   * @param {*} customErrorMsg
+   * @returns
+   */
+  assertInstanceOf( actualValue, expectedValue, customErrorMsg = '' ){
+
+    return expect( actualValue, customErrorMsg ).to.be.an.instanceof(
+      expectedValue
+    );
+    
+  }
+  
+  /**
+     * Asserts that the target is a member of the given array list
+     * https://www.chaijs.com/api/bdd/#method_oneof
+     * @param {*} actualValue
+     * @param {*} expectedValue
+     * @param {*} customErrorMsg
+     * @returns
+     */
+  assertBeOneOf( actualValue, expectedValue, customErrorMsg = '' ){
+  
+    return expect( actualValue, customErrorMsg ).to.be.oneOf(
+      expectedValue
+    );
+    
+  }
+  
+  /**
+     * Asserts that the array list has a member from the given array list
+     * https://www.chaijs.com/api/bdd/#method_oneof
+     * @param {*} actualValue
+     * @param {*} expectedValue
+     * @param {*} customErrorMsg
+     * @returns
+     */
+  assertContainOneOf( actualValue, expectedValue, customErrorMsg = '' ){
+  
+    return expect( actualValue, customErrorMsg ).to.contain.oneOf(
+      expectedValue
+    );
+      
+  }
+
 }
 
 module.exports = chaiWrapper;
